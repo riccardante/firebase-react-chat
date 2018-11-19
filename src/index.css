@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.messageList {
+  flex-basis: 100%;
+  overflow-y: auto;
+}
+
+.messageList-user {
+  font-weight: 500;
+}
+
+.messageList-date {
+  color: grey;
+  font-size: 14px;
+  font-weight: lighter;
+  float: right;
+  margin-left: 8px;
+}
+
+
+
+.inputBar {
+  background-color: white;
+  border-top: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.inputBar-button {
+  margin-left: 16px !important;  
+}
+.inputBar-input{
+  width: 600px;
+}
+.inputBar-icon{
+  margin-left: 8px;  
+}
+
+.inputBar .MuiAvatar-root-5 {
+  margin-right: 2em; 
+}
