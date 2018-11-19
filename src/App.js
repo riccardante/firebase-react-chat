@@ -15,7 +15,6 @@ class App extends Component {
 
   constructor() {
     super()
-
     // login user and get or generate userdata
     this.auth = FBApp.auth().signInAnonymously().then(user => {
       let userdata 
@@ -34,12 +33,21 @@ class App extends Component {
         });
         if(!userdata){
           var keys = Object.keys(userlist)
-          let randomkey = keys.length * Math.random() << 0
-          userdata = userlist[keys[randomkey]]
-          userdata['userid'] = user.user.uid 
-          FBApp.database().ref('user_repo/'+ keys[randomkey]).update({userid: user.user.uid})            
+          if(keys.length > 0) {
+            let randomkey = keys.length * Math.random() << 0
+            userdata = userlist[keys[randomkey]]
+            userdata['userid'] = user.user.uid 
+            FBApp.database().ref('user_repo/'+ keys[randomkey]).update({userid: user.user.uid})              
+          }else {
+            let u = {}
+            u.name = 'No more heroes..'
+            u.userid = user.user.uid
+            u.avatar = 'stan_lee.png'
+            userdata = {}
+            userdata = u
+          }
         }
-        this.setState({user:userdata})
+        this.setState({user:userdata})  
       })
     })
   }
