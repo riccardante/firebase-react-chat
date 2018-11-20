@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FBApp from './firebaseConfig'
+import { auth } from 'firebase';
 
 import InputBar from './inputBar'
 import MessageList from "./messageList";
@@ -64,9 +65,6 @@ class App extends Component {
       messages.push(message);
       this.setState({ messages });
     });  
-
-
-
   }
 
   render() {
